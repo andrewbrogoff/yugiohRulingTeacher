@@ -1,4 +1,4 @@
-from os import system, name
+from os import system, name, remove
 from time import sleep
 import base64
 
@@ -973,3 +973,8 @@ def StageQuestion():
 
 
 Intro()
+remove("Intro.mp3")
+remove("Stages.mp3")
+remove("HearAgain.mp3")
+remove("StageQuestion.mp3")
+remove("AllCorrect.mp3")
