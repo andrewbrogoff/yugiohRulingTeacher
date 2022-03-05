@@ -1,15 +1,22 @@
-
 from os import system, name
 from time import sleep
+
+system('python3 -m pip install playsound')
+from playsound import playsound
+
+
 def clear():
     sleep(0.16)
     if name == 'nt':
         _ = system('cls')
 
     else:
-        _=system('clear')
+        _ = system('clear')
+
 
 clear()
+
+
 def wrong():
     print("""
     eBBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSBBBBSSSSSSSBBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#@&SSSSSSSSSSSSSSSSSSSSSSSSSSSSB
@@ -863,9 +870,34 @@ def wrong():
     BBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#@$$@$**&BSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#&#&@@@&####S####&@$$%*%$%%$$@@@@@#
     BBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS####SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS##SSSSSSS#####SSSSSS#&&&&@$$%%$$@@#""")
     clear()
+def intro():
+    print("""The Damage Step is a step during the Battle Phase during which battle is performed. If an attack is occurring, it is entered immediately after the Battle Step.
+The Damage Step restricts many cards and effects from being activated.""")
+    playsound("Intro.mp3")
+
+    clear()
+def stages():
+    print("""There are five distinct timings within the Damage Step.
+Start of the Damage Step
+Before damage calculation
+Damage calculation
+After damage calculation
+End of the Damage Step
+    """)
 
 
+    playsound("Stages.mp3")
+    clear()
 
-print("Hello World")
-sleep(1)
+def hearAgain():
+    print("Would you like to hear that again?")
+    playsound("HearAgain.mp3")
+    clear()
+
+intro()
+sleep(2)
+stages()
+sleep(2)
+hearAgain()
+sleep(2)
 wrong()
