@@ -869,14 +869,17 @@ def wrong():
     BBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#$*%$!!$**@SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#$%@%%&####&&&@%%$$$%*%$@@@@@@@@#
     BBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#@$$@$**&BSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#&#&@@@&####S####&@$$%*%$%%$$@@@@@#
     BBBSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS####SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS##SSSSSSS#####SSSSSS#&&&&@$$%%$$@@#""")
+    print("You're a third-rate duelist with a fourth-rate deck!")
+    sleep(2)
     clear()
-def intro():
+def Intro():
     print("""The Damage Step is a step during the Battle Phase during which battle is performed. If an attack is occurring, it is entered immediately after the Battle Step.
 The Damage Step restricts many cards and effects from being activated.""")
     playsound("Intro.mp3")
-
+    sleep (1)
     clear()
-def stages():
+    Stages()
+def Stages():
     print("""There are five distinct timings within the Damage Step.
 Start of the Damage Step
 Before damage calculation
@@ -888,16 +891,34 @@ End of the Damage Step
 
     playsound("Stages.mp3")
     clear()
+    sleep(1)
+    HearAgain()
 
-def hearAgain():
+def HearAgain():
     print("Would you like to hear that again?")
     playsound("HearAgain.mp3")
-    clear()
 
-intro()
-sleep(2)
-stages()
-sleep(2)
-hearAgain()
-sleep(2)
-wrong()
+    hearAgainStages = input()
+    hearAgainStages = hearAgainStages.lower()
+    if hearAgainStages == "yes" or hearAgainStages == "y":
+        clear()
+        Stages()
+    else:
+        clear()
+        StageQuestion()
+
+def StageQuestion():
+    print("""What are the five stages of the damage step?.""")
+    playsound("StageQuestion.mp3")
+    stageQuestion1 = input("Stage 1:")
+    stageQuestion1 = stageQuestion1.lower()
+    if stageQuestion1 == 'start of the damage step':
+        print("Correct")
+    else:
+        wrong()
+        Stages()
+
+
+
+# intro()
+StageQuestion()

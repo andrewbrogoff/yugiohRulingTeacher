@@ -7,7 +7,7 @@ from gtts import gTTS
 import os
 
 # The text that you want to convert to audio
-mytext = """Would you like to hear that again?
+mytext = """You're a third rate duelist with a fourth rate deck!
 
 """
 
@@ -22,4 +22,4 @@ myobj = gTTS(text=mytext, lang=language, slow=False)
 
 # Saving the converted audio in a mp3 file named
 # welcome
-myobj.save("HearAgain.mp3")
+myobj.save("Insult.mp3")
