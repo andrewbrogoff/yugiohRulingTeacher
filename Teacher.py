@@ -934,35 +934,40 @@ def StageQuestion():
     playsound("StageQuestion.mp3")
     strtOfDmgStp = input("Stage 1: ")
     strtOfDmgStp = strtOfDmgStp.lower()
-    if strtOfDmgStp == 'start of the damage step':
+    ans1= b'c3RhcnQgb2YgdGhlIGRhbWFnZSBzdGVw'
+    if strtOfDmgStp == base64.b64decode(ans1).decode():
         print("Correct")
     else:
         wrong()
         Stages()
     bfrDmgCalc = input("Stage 2: ")
     bfrDmgCalc = bfrDmgCalc.lower()
-    if bfrDmgCalc == "before damage calculation":
+    ans2 = b'YmVmb3JlIGRhbWFnZSBjYWxjdWxhdGlvbg=='
+    if bfrDmgCalc == base64.b64decode(ans2).decode():
         print("Correct")
     else:
         wrong()
         Stages()
     dmgCalc = input("Stage 3: ")
     dmgCalc = dmgCalc.lower()
-    if dmgCalc == 'damage calculation':
+    ans3=b'ZGFtYWdlIGNhbGN1bGF0aW9u'
+    if dmgCalc == base64.b64decode(ans3).decode():
         print("Correct")
     else:
         wrong()
         Stages()
     aftrDmgCalc = input("Stage 4: ")
     aftrDmgCalc = aftrDmgCalc.lower()
-    if aftrDmgCalc == "after damage calculation":
+    ans4=b'YWZ0ZXIgZGFtYWdlIGNhbGN1bGF0aW9u'
+    if aftrDmgCalc == base64.b64decode(ans4).decode():
         print("Correct")
     else:
         wrong()
         Stages()
     endofDmgStp = input("Stage 5: ")
     endofDmgStp = endofDmgStp.lower()
-    if endofDmgStp == "end of the damage step":
+    ans5=b'ZW5kIG9mIHRoZSBkYW1hZ2Ugc3RlcA=='
+    if endofDmgStp == base64.b64decode(ans5).decode():
         print("Correct")
         clear()
         print("You got all of the questions correct. Congratulations!")
