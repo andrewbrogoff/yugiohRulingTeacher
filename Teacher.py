@@ -6,6 +6,7 @@ system('python3 -m pip install playsound')
 from playsound import playsound
 
 
+
 def clear():
     sleep(0.16)
     if name == 'nt':
